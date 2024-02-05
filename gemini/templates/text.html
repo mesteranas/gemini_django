@@ -1,0 +1,16 @@
+{%extends "home.html"%}
+{%block title%} text model{%endblock%}
+{%block content%}
+<h1>text model</h1>
+<form method="post">
+    {%csrf_token%}
+    <label for="message">message</label>
+    <textarea name="message" id="message" required></textarea>
+    <button type="submit">send</button>
+</form>
+<label for="result">result</label>
+<textarea readonly id="result">{{result}}</textarea>
+{%if result%}
+<script>document.getElementById("result").focus()</script>
+{%endif%}
+{%endblock%}

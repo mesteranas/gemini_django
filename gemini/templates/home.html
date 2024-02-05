@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    {% load static%}
+    <title>{% block  title %}home {%endblock%} -  gemini</title>
+    <link rel="stylesheet" href="{% static "css/stile.css" %}">
+    </head>
+<body>
+    <header id="header">
+        <h1>gemini</h1>
+        <p><a href="#content">skip to content</a></p>
+        <p><a href="#footer">skip to footer</a></p>
+    </header>
+    <nav>
+        <h2>navigation bar</h2>
+        <ul id="navBar">
+        <li><a href="{% url 'homePage'%}">home</a></li>
+        <li><a href="{%url "TextModel"%}">text model</a></li>
+        <li><a href="{% url "contect"%}">contect</a></li>
+        <li><a href="{%url "about"%}">about</a></li>
+    </ul>
+    </nav>
+    {%block content%}
+    <section id="content">
+    <h1>welcom</h1>
+    </section>
+    {%endblock%}
+    <footer id="footer">
+        <h2>footer</h2>
+        <p><a href="#header">skip to top</a></p>
+        <p><a href="https://www.paypal.me/AMohammed231">donate</a></p>
+    <p>&copy; 2024 mesteranas sites</p>
+    </footer>
+    <script src="{%static "javascript/script.js"%}"></script>
+</body>
+</html>
