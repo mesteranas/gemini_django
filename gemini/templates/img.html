@@ -1,0 +1,16 @@
+{%extends "home.html"%}
+{%block title%}image model {%endblock%}
+{%block content%}
+<h1>image model</h1>
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    {{form}}
+    <button type="submit">send</button>
+</form>
+<label for="result">result</label>
+<textarea readonly id="result">{{result}}</textarea>
+<script>
+    if({{result}}){
+        document.getElementById("result").focus()
+    }
+{%endblock%}
